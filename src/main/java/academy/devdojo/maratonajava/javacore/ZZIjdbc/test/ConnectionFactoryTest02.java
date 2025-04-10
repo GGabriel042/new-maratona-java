@@ -9,7 +9,10 @@ import java.util.List;
 @Log4j2
 public class ConnectionFactoryTest02 {
     public static void main(String[] args) {
-        List<Producer> producers = ProducerRepositoryRowSet.findByNameJdbcRowSet("NHK");
+        Producer producerToUpdate = Producer.builder().id(1).name("MadHouse").build();
+        ProducerRepositoryRowSet.updateJdbcRowSet(producerToUpdate);
+        log.info("----------------");
+        List<Producer> producers = ProducerRepositoryRowSet.findByNameJdbcRowSet("");
         log.info(producers);
     }
 }
