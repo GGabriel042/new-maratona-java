@@ -41,6 +41,10 @@ public class ProducerService {
         ProducerRepository.findByNameAndDelete(name);
     }
 
+    public static List<Producer> findByNamePreparedStatement(String name) {
+        return ProducerRepository.findByNamePreparedStatement(name);
+    }
+
     public static void showProducerMetaData() {
         ProducerRepository.showProducerMetaData();
     }
