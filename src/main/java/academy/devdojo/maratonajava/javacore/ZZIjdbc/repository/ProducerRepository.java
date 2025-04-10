@@ -42,6 +42,7 @@ public class ProducerRepository {
             conn.setAutoCommit(false);
             preparedStatementSaveTransaction(conn, producers);
             conn.commit();
+            conn.setAutoCommit(true);
         } catch (SQLException e) {
             log.error("Error while trying update producer '{}' with prepared statement", producers, e);
         }
